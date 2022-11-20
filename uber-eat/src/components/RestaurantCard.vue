@@ -1,23 +1,44 @@
 <template>
-  <div class="retaurant--card">
-    <div class="restaurant--image"></div>
+  <div  class="retaurant--card">
+    <div :style="changeBackground" class="restaurant--image">
+        <!-- <img v-bind:src="infoRestaurant.image " alt=""> -->
+    </div>
     <div class="restaurant--information">
       <div class="top">
-        <p class="name">Subway</p>
+        <p class="name">
+            {{ infoRestaurant.name }}
+        </p>
         <p class="note">
             <span>
-                 4.5
+                 {{ infoRestaurant.note }}
                 </span>
                  </p>
       </div>
-      <p class="time">20-30min*€€</p>
+      <p class="time">
+        {{ infoRestaurant.drive_time }}
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from 'vue';
 export default {
-    name: "RestaurantCard"
+    name: "RestaurantCard",
+    props: {
+        infoRestaurant: Object
+    },
+    setup(props) {
+        console.log(props.infoRestaurant);
+        const changeBackground= computed(()=> {
+            return {
+                backgroundImage: `url(${props.infoRestaurant.image})`
+            }
+        })
+        return {
+            changeBackground
+        }
+    }
 };
 </script>
 

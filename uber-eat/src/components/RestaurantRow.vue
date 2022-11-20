@@ -2,10 +2,11 @@
   <div class="restaurant--row">
  <h2 classe="title">
     Nos Restaurants
+    <!-- {{ toto }} -->
  </h2>
  
  <div class="wrapper--card">
-    <RestaurantCard v-for="(card , index) in 3" :key="index"/>
+    <RestaurantCard v-for="(card , index) in threeRestaurant" :infoRestaurant="card" :key="index"/>
     </div>
   </div>
 </template>
@@ -16,6 +17,10 @@ export default {
     name: "ReastaurantRow",
     components: {
         RestaurantCard,
+    },
+    props: {
+        // toto: String
+        threeRestaurant: Array
     }
 }
 </script>

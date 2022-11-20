@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Home from './pages/Home.vue'
+import Home from './pages/Home'
 // import RestaurantRow from './components/RestaurantRow.vue'
 // import HelloWorld from './components/HelloWorld.vue'
 // import RestaurantCard from './components/RestaurantCard.vue';
